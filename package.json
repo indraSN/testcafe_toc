@@ -1,0 +1,25 @@
+{
+  "name": "testcafe-toc",
+  "version": "1.0.0",
+  "description": "Toc e2e testing using testcafe",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome stepdefinitions/toc_signup.js",
+    "test1": "testcafe chrome stepdefinitions/toc_signup.js -f 'Palgrave TOC widget'",
+    "test2": "testcafe chrome stepdefinitions/toc_signup.js -f 'Springer TOC subscription'"
+  },
+  "keywords": [],
+  "author": "Sree",
+  "license": "ISC",
+  "dependencies": {
+    "cucumber": "^6.0.2",
+    "cucumber-html-reporter": "^5.0.2",
+    "cucumber-junit": "^1.7.1",
+    "multiple-cucumber-html-reporter": "^1.13.1",
+    "testcafe": "^1.6.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "xhr2": "^0.2.0"
+  }
+}
