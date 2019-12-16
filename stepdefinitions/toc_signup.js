@@ -1,7 +1,7 @@
 import 'testcafe';
 import {Selector} from "testcafe";
 import { ClientFunction } from 'testcafe';
-import  getConfirmToken  from 'src/library/fetchconfirmtoken.js';
+//import  getConfirmToken  from 'src/library/fetchconfirmtoken.js';
 
 
 fixture ('Regression: Palgrave TOC widget').page('https://www.qa.sgw.palgrave.com/gp/journal/41286');
@@ -204,7 +204,8 @@ test(`TC04 Verify toc sign up conflict flow`, async t => {
 fixture ('dry run').page('https://test-www.springer.com/journal/10483');
 
 test(`Verify toc confirm page`, async t => {
-  const token= getConfirmToken()
+  const a= new Sample();
+  const ret_val = a.getConfirmToken();
     console.log(token)
     await t
         .navigateTo('https://sprcom-alerts-ui-qa.dev.cf.private.springer.com/alerts/toc/confirm?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Nzg4Mzg4MjQsImlhdCI6MTU3NjI0NjgyNCwiZW1haWwiOiJ0ZXN0c3ByaW5nZXIwQGdtYWlsLmNvbSIsImxhbmd1YWdlIjpudWxsLCJqb3VybmFsTm8iOjQxMjg2LCJqb3VybmFsVGl0bGUiOiJTdWJqZWN0aXZpdHkiLCJpc1Byb21vdGlvbiI6bnVsbCwiaW1wcmludCI6bnVsbH0.CTTnxRkwRGXBdZJG3qLUJRhchDnpKrHgZvqj2Adjg-Q&flavour=palgrave')
