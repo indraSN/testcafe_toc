@@ -1,10 +1,9 @@
 
-getConfirmToken()
-function getConfirmToken() {
-    const fetch = require('node-fetch');
-
-
-     fetch('http://sprcom-alerts-ui-qa.dev.cf.private.springer.com/alerts/api/toc/tokens/confirm',
+export dafult class Sample{
+    async getConfirmToken() {
+        
+        const fetch = require('node-fetch');
+        fetch('http://sprcom-alerts-ui-qa.dev.cf.private.springer.com/alerts/api/toc/tokens/confirm',
         {
 
             body: JSON.stringify({
@@ -30,5 +29,6 @@ function getConfirmToken() {
         .catch((err) => {
             console.log(err);
         })
-};
+    
+}
 
