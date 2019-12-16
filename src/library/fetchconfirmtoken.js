@@ -1,9 +1,8 @@
+const fetch = require('node-fetch');
 
-export dafult class Sample{
-    async getConfirmToken() {
-        
-        const fetch = require('node-fetch');
-        fetch('http://sprcom-alerts-ui-qa.dev.cf.private.springer.com/alerts/api/toc/tokens/confirm',
+async function getConfirmToken() {
+    return fetch(
+        'http://sprcom-alerts-ui-qa.dev.cf.private.springer.com/alerts/api/toc/tokens/confirm',
         {
 
             body: JSON.stringify({
@@ -16,19 +15,12 @@ export dafult class Sample{
             },
             method: 'POST'
         })
-        .then((res) => {
+        .then((res) =>
             res.text()
                 .then((token) => {
-                    console.log('<><><'+token);
                     return (token);
                 })
-                .catch((err) => {
-                    console.log(err);
-                });
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-    
+        )
 }
 
+export default getConfirmToken;
