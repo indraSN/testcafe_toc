@@ -4,9 +4,11 @@
   "description": "Toc e2e testing using testcafe",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome stepdefinitions/toc_signup.js",
-    "test1": "testcafe chrome stepdefinitions/toc_signup.js -f 'Palgrave TOC widget'",
-    "test2": "testcafe chrome stepdefinitions/toc_signup.js -f 'Springer TOC subscription'"
+    "test": "testcafe chrome,firefox stepdefinitions/toc_signup.js --skip-js-errors",
+    "test1": "testcafe chrome stepdefinitions/toc_signup.js -f 'Regression: Palgrave TOC widget' --skip-js-errors",
+    "test2": "testcafe chrome stepdefinitions/toc_signup.js -f 'Regression: Springer TOC subscription page' --skip-js-errors",
+    "test3": "testcafe chrome,firefox stepdefinitions/toc_signup.js -f 'E2E : Springer TOC Subscription journey' --skip-js-errors",
+    "testrun": "testcafe chrome stepdefinitions/toc_signup.js -f 'dry run' --skip-js-errors"
   },
   "keywords": [],
   "author": "Sree",
@@ -16,6 +18,9 @@
     "cucumber-html-reporter": "^5.0.2",
     "cucumber-junit": "^1.7.1",
     "multiple-cucumber-html-reporter": "^1.13.1",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
     "testcafe": "^1.6.0",
     "xmlhttprequest": "^1.8.0"
   },
